@@ -93,12 +93,9 @@
       },
       "properties": {
         "friendlyName": "[variables('workspaceName')]",
+        "applicationInsights":"[resourceId('Microsoft.Insights/components', variables('applicationInsightsName'))]",
         "keyVault": "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]",
         "storageAccount": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
-      },
-      "sku": {
-        "name": "Basic",
-        "tier": "Basic"
       },
       "dependsOn": [
         "[resourceId('Microsoft.Insights/components', variables('applicationInsightsName'))]",
