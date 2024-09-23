@@ -10,13 +10,13 @@ languages:
 - arm
 - json
 ---
-# Azure AI Studio Managed Network
+# Setup Azure ML Studio with GPU Compute and other resources
 
 [![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fctava-msft%2Fmlstudio-compute%2Fmain%2Fazuredeploy.json)
 
 This template sets up Azure ML Studio with a workspace, storeage account, keyvault and compute.
 
-*** IMPORTANT: Standard_NC40ads_H100_v5 or similiar GPU quota is needed in the Azure region you are deploying to.
+*** IMPORTANT: Standard_NC40ads_H100_v5 or similiar GPU quota is needed in your Azure region.
 
 ## Resources
 
