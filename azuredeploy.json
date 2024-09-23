@@ -4,14 +4,14 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.28.1.47646",
-      "templateHash": "7480269780041571611"
+      "version": "0.29.47.4906",
+      "templateHash": "11899332691003401049"
     }
   },
   "parameters": {
     "vmComputeSize": {
-      "defaultValue": "Standard_NC40ads_H100_v5",
-      "type": "string"
+      "type": "string",
+      "defaultValue": "Standard_NC40ads_H100_v5"
     }
   },
   "variables": {
@@ -53,11 +53,11 @@
     {
       "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
       "apiVersion": "2019-06-01",
-      "name": "[concat(variables('storageAccountName'), '/default/', variables('storageContainerName'))]",
+      "name": "[format('{0}/default/{1}', variables('storageAccountName'), variables('storageContainerName'))]",
+      "properties": {},
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
-      ],
-      "properties": {}
+      ]
     },
     {
       "type": "Microsoft.KeyVault/vaults",
@@ -74,13 +74,13 @@
       }
     },
     {
-      "type":"Microsoft.Insights/components",
-      "apiVersion":"2018-05-01-preview",
-      "name":"[variables('applicationInsightsName')]",
-      "location":"[variables('location')]",
-      "kind":"web",
-      "properties":{
-        "Application_Type":"web"
+      "type": "Microsoft.Insights/components",
+      "apiVersion": "2018-05-01-preview",
+      "name": "[variables('applicationInsightsName')]",
+      "location": "[variables('location')]",
+      "kind": "web",
+      "properties": {
+        "Application_Type": "web"
       }
     },
     {
@@ -121,7 +121,5 @@
         "[resourceId('Microsoft.MachineLearningServices/workspaces', variables('workspaceName'))]"
       ]
     }
-  ],
-  "outputs": {
-  }
+  ]
 }
