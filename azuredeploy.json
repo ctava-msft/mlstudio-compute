@@ -91,6 +91,7 @@
       "identity": {
         "type": "SystemAssigned"
       },
+      "kind": "hub",
       "properties": {
         "friendlyName": "[variables('workspaceName')]",
         "applicationInsights":"[resourceId('Microsoft.Insights/components', variables('applicationInsightsName'))]",
